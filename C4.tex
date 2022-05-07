@@ -1,0 +1,31 @@
+\documentclass[letterpaper, onecolumn, 11pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{hyperref}
+\usepackage{marginnote}
+\usepackage{caption}
+
+\newtheorem{teo}{Teorema}
+\newtheorem{ej}{Ejemplo}
+\newtheorem{coro}{Corolario}
+
+%\renewcommand*{\marginnotevadjust}{-0.1cm}
+%\renewcommand*{\marginfont}{\footnotesize}
+%\usepackage[right=4.5cm,left=2cm,top=3cm,bottom=3.0cm]{geometry}
+\hypersetup{colorlinks=true, linkcolor=red}
+\begin{document}
+\sffamily
+\title{\Huge\textbf{{Cálculo IV: Cálculo Complejo}}}
+\author{Diez B. Borja}
+\maketitle
+\tableofcontents
+\input{cap/funciones-analiticas.tex}
+\input{cap/funciones-elementales.tex}
+\input{cap/integrales.tex}
+\input{cap/series.tex}
+\input{cap/residuos-polor.tex}
+
+\end{document}

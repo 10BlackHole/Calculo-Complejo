@@ -1,0 +1,209 @@
+\chapter{Funciones analíticas}
+\section{Ecuaciones de Cauchy-Riemann}
+Obtendremos un par de ecuaciones que deben satisfacer las primeras derivadas parciales de las funciones componentes $u$ y $v$ de una función
+
+\begin{equation}\label{1}
+f(z)=u(x,y)+iv(x,y)
+\end{equation}
+
+en un punto $z_0=(x_0, y_0)$ para que exista la derivada de $f$. También veremos cómo se puede escribir $f'(z_0)$ en términos de tales derivadas parciales.
+
+Supongamos que existe la derivada
+
+\begin{equation}\label{2}
+f'(z_0)=\lim_{\Delta z\to 0}\frac{f(z_0+\Delta z)-f(z_0)}{\Delta z}
+\end{equation}
+
+Poniendo $z_0=x_0+iy_0$ y $\Delta z=\Delta x+ i\Delta y$, se tiene
+
+\begin{equation}\label{3}
+Re[f'(z_0)]=\lim_{(\Delta x, \Delta y)\to (0,0)} Re\left[\frac{f(z_0+\Delta z)-f(z_0)}{\Delta z}\right]
+\end{equation}
+
+\begin{equation}\label{4}
+Im[f'(z_0)]=\lim_{(\Delta x, \Delta y)\to (0,0)} Im\left[\frac{f(z_0+\Delta z)-f(z_0)}{\Delta z}\right]
+\end{equation}
+
+Realizando un trabajo algebráico riguroso, haciendo tender $(\Delta x,\Delta y)$ a $(0,0)$ horizontalmente por los puntos $(\Delta x,0)$, veremos que la existencia de $f'(z_0)$ exige que
+
+\begin{equation}\label{8:CR}\marginnote{Ecuaciones de Cauchy-Riemann}
+\boxed{u_x(x_0,y_0)=v_y(x_0,y_0) \qquad \textup{y}\qquad u_y(x_0,y_0)=-v_x(x_0,y_0)}
+\end{equation}
+
+\begin{teo}
+Supongamos que $$f(z)=u(x,y)+iv(x,y)$$ y que $f'(z)$ existe en un punto $z_0=x_0+iy_0$. Entonces las primeras derivadas parciales de $u$ y $v$ deben existir en ese punto y deben satisfacer en él las ecuaciones de Cauchy-Riemann
+
+\begin{equation}\label{9}
+u_x=v_y \qquad u_y=-v_x
+\end{equation}
+Además, $f'(z_0)$ se puede expresar como 
+\begin{equation}\label{10}
+\boxed{f'(z_0)=u_x+iv_x}
+\end{equation}
+donde las derivadas parciales están evaluadas en $(x_0,y_0)$
+\end{teo}
+
+Como las condiciones de Cauchy-Riemann son condiciones necesarias para la existencia de la derivada de una función $f$ en un punto $z_0$, suelen utilizarse para localizar los puntos en los que $f$ \textbf{no} admite derivada.
+
+\section{Condiciones suficientes}
+El que las ecuaciones de Cauchy-Riemann se satisfagan en un punto no basta para asegurar la existencia de la derivada de una funcion $f(z)$ en ese punto. Pero con ciertos requisitos de continuidad se tiene el siguiente resultado.
+
+\begin{teo}\label{cond-necesarias}
+Sea la función $$f(z)=u(x,y)+iv(x,y)$$ definida en algún $\epsilon$ entorno de un punto $z_0=x_0+iy_0$. Suponemos que las derivadas parciales de primer orden de las funciones $u$ y $v$ con respecto a $x$ e $y$ existen en todos los puntos de ese entorno y son continuas en $(x_0,y_0)$. Entonces, si esas derivadas parciales satisfacen las ecuaciones de Cauchy-Riemann $$u_x=v_y\qquad u_y=-v_x$$ en $(x_0,y_0)$, la derivada $f'(z_0)$ existe.
+\end{teo}
+
+\begin{ej}
+Se tiene la función $$f(z)=e^x(\cos y+i\sin y)$$ Notar que se cumplen las ecuaciones de Cauchy-Riemann en todas partes, y las derivadas son continuas en todas partes, las condiciones requeridas por el teorema se cumplen en todo el plano complejo. Por tanto, $f'(z_0)$ existe en todas partes, y $$f'(z)=e^x(\cos y+i\sin y)$$
+
+Nótese que $f'(z)=f(z)$
+\end{ej}
+
+\section{Coordenadas polares}
+Cuando $z_0\neq 0$, el teorema \ref{cond-necesarias} se reformula en coordenadas polares mediante la transformación 
+
+\begin{equation}\label{19.1}
+x=r\cos\theta \qquad y=r\sin\theta
+\end{equation}
+
+Según escribamos $$z=x+iy \quad \textup{o} \quad z=re^{i\theta} \qquad (z\neq 0)$$ cuando $w=f(z)$, las partes real e imaginaria de $w=u+v$ se expresan en términos de las variables $x,y$ o de $r,\theta$. Supongamos que existen en todas partes las derivadas parciales de primer orden de $u$ y de $v$ con respecto a $x$ y $y$ en algún entorno de un punto no nulo $z_0$, y que son continuas en ese punto. Las derivadas parciales de primer orden con respecto a $r$ y $\theta$ tienen también esas propiedades, y la regla de la cadena para la derivación de funciones reales a dos variables reales se puede usar para escribirlas en términos de las antedichas. Más concretamente, como 
+
+\begin{equation*}
+\frac{\partial u}{\partial r}=\frac{\partial u}{\partial x}\frac{\partial x}{\partial r}+\frac{\partial u}{\partial y}\frac{\partial y}{\partial r}, \quad \frac{\partial u}{\partial \theta}=\frac{\partial u}{\partial x}\frac{\partial x}{\partial \theta}+\frac{\partial u}{\partial y}\frac{\partial y}{\partial \theta}
+\end{equation*}
+podemos escribir 
+
+\begin{equation}\label{19.2}
+u_r=u_x\cos\theta + u_y\sin\theta, \quad u_\theta=-u_rr\sin\theta + u_yr\cos\theta
+\end{equation}
+
+Analógicamnete
+
+\begin{equation}\label{19.3}
+v_r=v_x\cos\theta + v_y\sin\theta, \quad v_\theta=-v_rr\sin\theta + v_yr\cos\theta
+\end{equation}
+
+Si las derivadas parciales con respecto a $x$ e $y$ satisfacen además las ecuaciones de Cauchy-Riemann
+
+\begin{equation}\label{19.4}
+u_x=v_y, \quad u_y=-v_x
+\end{equation}
+
+en $z_0$, las ecuaciones (\ref{19.3}) pasan a ser
+
+\begin{equation}\label{19.5}
+v_r=-u_y\cos\theta +u_x\sin\theta, \quad v_\theta = u_yr\sin\theta + u_xr\cos\theta
+\end{equation}
+
+en ese punto. Es claro entonces, (\ref{19.2}) y (\ref{19.5}), que
+
+\begin{equation}\label{19.6}\marginnote{Ecs. de Cauchy-Riemann en polares}
+\boxed{u_r=\frac{1}{r}v_\theta, \quad \frac{1}{r}u_\theta=-v_r}
+\end{equation}
+
+en el punto $z_0$. Las ecuaciones (\ref{19.6}) son una forma alternativa de las ecuaciones de Cauchy-Riemann (\ref{19.4}).
+
+Se puede reformular el teorema \ref{cond-necesarias} en corrdenadas polares.
+
+\begin{teo}
+Sea la función $$f(z)=u(r,\theta)+iv(r,\theta)$$ definida en algún $\epsilon$ entorno de un punto no nulo $z_0=r_0\exp(i\theta_0)$. Supongamos que las primeras derivadas parciales de las funciones $u$ y $v$ con respecto a $r$ y $\theta$ existen en todos los puntos de ese entorno y son continuas en $(r_0,\theta_0)$. Entonces, si esas derivadas parciales satisfacen la forma polar (\ref{19.6}) de las ecuaciones Cauchy-Riemann en $(r_0,\theta_0)$, la derivada $f'(z_0)$ existe.
+\end{teo}
+
+Aquí la derivada $f'(z_0)$ se puede escribir
+
+\begin{equation}\label{19.7}
+\boxed{f'(z_0)=e^{-i\theta}(u_r+iv_r)},
+\end{equation}
+
+donde el miembro de la derecha ha sido calculado en $(r_0,\theta_0)$
+
+\begin{ej}
+Consideremos la funcion $$f(z)=\frac{1}{z}=\frac{1}{re^{i\theta}}$$ Las condiciones del teorema del teorema se satidfacen en cualquier punto no nulo del plano. Por tanto la derivda de $f$ existe entre ellos en ellos, y de acuerdo con la expresión (\ref{19.7},
+
+\begin{equation*}
+f'(z)=e^{-i\theta}=\left(-\frac{\cos\theta}{r^2}+i\frac{\sin\theta}{r^2}\right)=-\frac{1}{(re^{i\theta})^2}=-\frac{1}{z^2}
+\end{equation*}
+\end{ej}
+
+\section{Funciones analíticas}
+Una función $f$ de la variable compleja $z$ se dice \textit{analítica} en un conjunto abierto si tiene derivada en todo punto de ese abierto. En particular, $f$ \textit{es analítica en un punto $z_0$} si es analítica en un entorno de $z_0$. 
+
+\begin{ej}
+La función $f(z)=1/z$ es analítica en tod punto no nulo del plano finito, mientras que la función $f(z)=|z|^2$ no es analítica en ningún punto, porque sólo admite derivada en $z=0$, pero no en un entorno.
+\end{ej}
+
+Una función \textbf{entera} es una función que es analítica en todos los puntos del plano finito. Ya que la derivada de un polinomio existe en todas partes, \textit{todos los polinomios son funciones enteras}.
+
+Si una función no es analítica en un punto $z_0$ pero es analítica en algún punto de todo entorno de $z_0$, se dice que $z_0$ es un \textit{punto singular}, o una \textit{singularidad} de $f$. El punto $z=0$ es obviamente singular para la función $f(z)=1/z$. La función $f(z)=|z|^2$, por su parte, carece de singularidades, pues no es analítica en ningún punto.
+
+Una condición necesaria, pero en modo alguno suficiente, para que $f$ sdea analítica en un dominio $D$ es claramente la contiuidad de $f$ sobre $D$. El que se cumplan las ecuaciones de Cauchy-Riemann es también necesario, pero tampoco suficiente.
+
+Las derivadas de la suma y el producto de dos funciones existen siempre que ambas funciones tengan derivada. Así pues, \textit{si dos funciones son analíticas en un dominio $D$, su suma y su producto son anlíticos ambos en $D$}. Analógicamente, \textit{su cociente es analñitico en $D$ supuesto que la función del denominador no se anule en ningún punto de $D$}.
+
+Con la regla de la cadena para la derivada de una función compuesta encontramos que \textit{una función compuesta de dos funciones analíticas es analítica}.
+
+\begin{teo}
+Si $f'(z)=0$ en todos los puntos de un dominio $D$, entonces $f(z)$ es constante sobre $D$.
+\end{teo}
+
+\section{Funciones armónicas}
+Una función real $h$ de dos variables reales $x$ e $y$ se dice \textit{armónica} en un dominio dado del plano $xy$ si sobre ese dominio tiene derivadas parciales continuas de primer y segundo orden, y satisfacen la ecuación 
+
+\begin{equation}\label{21.1}
+h_{xx}(x,y)+h_{yy}(x,y)=0
+\end{equation}
+
+La ecuación (\ref{21.1}) se conoce como \textit{ecuación de Laplace}.
+
+\begin{teo}\label{teo:21.1}
+Si una función $f(z)=u(x,y)+iv(x,y)$ es analítica en un dominio $D$, sus funciones $u$ y $v$ son armónicas en $D$.
+\end{teo}
+
+\begin{ej}
+Ya que las funciones $$f(z)=z^2=(x+iy)^2=x^2-y^2+i2xy$$ y $$g(z)=e^x(\cos y+i\sin y)$$ son enteras, tambien lo es su producto. Por el Teorema \ref{teo:21.1}, por tanto, la función $$Re[f(z)g(z)]=e^x[(x^2-y^2)\cos y-2xy\sin y]$$ es armónica en todo el plano.
+\end{ej}
+
+Si dos funciones dadas $u$ y $v$ son armónicas en un dominio $D$ y sus derivadas parciales de primer orden satisfacen las ecuaciones de Cauchy-Riemann (\ref{8:CR}) en $D$, se dice que $v$ es \textit{armónica cinjugada de u}.
+
+Es evidente que si una función $f(z)=u(x,y)+i(x,y)$ es analítica en un dominio $D$, entonces $v$ es una armónica conjugada de $u$. Recíprocamente, si $v$ es una armónica conjugada de $u$ en un dominio $D$, la función $f(z)=u(x,y)+iv(x,y)$ es analítica en $D$. Enunciamos esto como terorema
+
+\begin{teo}
+Una función $f(z)=u(x,y)+iv(x,y)$ es analítica en un dominio $D$ si y sólo si $v$ es una armónica conjugada de $u$.
+\end{teo}
+
+
+Si $v$ es armónica conjugada de $u$ en el dominio $D$, entinces $-u$ es armónica conjugada de $v$ en $D$, y recíprocamente. Eso se ve escribiendo $$f(z)=u(x,y)+iv(x,y), \qquad -if(z)=v(x,y)-iu(x,y)$$ y observando que $f(z)$ es analítica si y sólo si $-f(z)$ es analítica allí.
+
+\begin{ej}
+Ilustraremos ahora otro método para la obtención de una armónica conjugada de una función dada. La función 
+
+\begin{equation}\label{21.5}
+u(x,y)=y^3-3x^2y
+\end{equation}
+
+se ve fácilmente que es armónica en todo el plano $xy$. Para calcular una armónica conjugada $v(x,y)$ hagamos notar que $$u_x(x,y)=-6xy$$ De manera que, en vista de la condición $u_x=v_y$, podemos escribir $$v_y(x,y)=-6xy$$ Manteniendo $x$ fija e integrando los dos lados de esa ecuación en $y$, encontramos que 
+
+\begin{equation}\label{21.6}
+v(x,y)=-3xy^2+\phi (x)
+\end{equation}
+
+donde $\phi$ es, por el momento, una función arbitraria de $x$. Como ha de cumplirse $u_y=-v_x$ se sigue de (\ref{21.5}) y (\ref{21.6}) que $$3y^2-3x^2=3y^2-\phi '(x)$$ Luego $\phi '(x)=3x^2$, o sea $\phi (x)=x^3+c$ donde $c$ es un número real arbitrario. Por tanto, la función $$v(x,y)=x^3-3xy^2+c$$ es una armónica conjugada de $u(x,y)$.
+
+La función analítica correspondiente es 
+
+\begin{equation}\label{21.7}
+f(z)=(y^3-3x^2y)+i(x^3-3xy^2+c)
+\end{equation}
+
+Se comprueba sin dificultad que $$f(z)=i(z^3+c)$$ Esta forma viene sugerida observando que cuando $y=0$, (\ref{21.7}) se convierte en $$f(x)=i(x^3+c)$$.
+
+\end{ej}
+
+
+
+
+
+
+
+
+
+

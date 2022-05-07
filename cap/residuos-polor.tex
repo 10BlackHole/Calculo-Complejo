@@ -1,0 +1,64 @@
+\chapter{Residuos y polos}
+El teorema de Cauchy-Goursat afirma que si una función es analítica en todo ponto interior de un contorno cerrado simple $C$ y en los puntos del propio $C$, el valor de la integrla de la función a lo largo de ese contorno es cero. Sin embargo, si la función no es anañítica en un número finito de puntos interiores a $C$, existe, como veremos, un número específico, llamado residuo, con que cada una de esos punto contribuye a la integral. 
+
+\section{Residuos}
+Recordemos que un punto $z_0$ se llama punto singular de la función $f$ si $f$ no es analítica en $z_0$ pero en analítica en algún punto de todo entorno de $z_0$. Un punto singular se dice que es \textbf{aislado} si, además, existe un entorno punteado $0<|z-z_0|\epsilon$ de $z_0$ en el que $f$ es analítica.
+
+Si $z_0$ es un punto singular aislado de una función $f$, existe un número positivo $R_2$ tal que $f(z)$ es analítica en todo $z$ que cumpa $0<|z-z_0|<R_2$. En consecuencia, la función viene representada por una serie de Laurent 
+
+\begin{equation}\label{53.1}
+f(z)=\sum_{n=0}^\infty a_n(z-z_0)^n+\frac{b_1}{z-z_0}+\frac{b_2}{(z-z_0)^2}+\cdots +\frac{b_n}{(z-z_0)^n}+\cdots
+\end{equation}
+
+donde los coeficientes $a_n$ y $b_n$ tienen ciertas representaciones integrales. En particular, $$b_n=\frac{1}{2\pi i}\int_C\frac{f(z)dz}{(z-z_0)^{-n+1}}\qquad (n = 1,2,\dots)$$ donde $C$ es cualquier contorno cerrado simpe positivamente orientado en torno a $z_0$ y contenido en el dominio $0<|z-z_0|<R_2$. Cuando $n=1$, esta expresión para $b_n$ puede escribirse
+
+\begin{equation}\label{53.2}
+\int_Cf(z)dz=2\pi ib_1
+\end{equation}
+
+El número complejo $b_1$, que es el coeficiente de $1/(z-z_0)$ en el desarrollo (\ref{53.1}), se llama el \textit{residuo} de $f$ en el punto singular aislado $z_0$. A menudo usaremos la notación $${Res}_{z=z_0}f(z)$$
+
+o simplemente $B$ cuando $z_0$ y $f$ estén claramente indicados, para denotar el residuo $b_1$
+
+La Eq. (\ref{53.2}) proporciona un método útil para evaluar ciertas integrales sobre contornos cerrados simples.
+
+\section{El teorema de los residuos}
+Si la función $f$ tiene sólo un número finito de puntos singulares interiores a un contorno cerrado simpled ado $C$, han de ser aislados. El próximo teorema es un enunciado preciso del hecho de que si además $f$ es analítica sobre $C$, y $C$ se recorre en sentido positivo, el valor de la integral de $f$ a lo largo de $C$ es $w\pi i$ veces la \textit{suma} de los residuos en esos puntos singulares.
+
+\begin{teo}
+Si $C$ es un contorno cerrado simple positivamente orientado, dentro del cual y sobre el cual una función $f$ es analítica a excepción de un número finito de puntos singulares $z_k (k=1, ,2 \dots , n)$ interior a $C$, entonces
+
+\begin{equation}\label{54.1}
+\int_Cf(z)dz=2\pi i\sum_{k=1}^nRes_{z=z_k}f(z)
+\end{equation}
+
+\end{teo}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

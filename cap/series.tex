@@ -1,0 +1,309 @@
+\chapter{Series}
+\section{Covergencia de sucesiones y series}
+Una \textit{sucesión} infinita
+
+\begin{equation}\label{44.1}
+z_1, z_2,\dots, z_n,\dots
+\end{equation}
+
+de número complejos tiene \textit{límite} $z$ si, para cada número positivo $\epsilon$ existe un número positivo $n_0$ tal que
+
+\begin{equation*}
+|z_n-z|<\epsilon\qquad \textup{si}\qquad n>n_0
+\end{equation*} 
+
+Geométricamente, esto signifca que para valores suficientemente grandes de $n$, los puntos $z_n$ están a cualquier $\epsilon$ entorno dado de $z$. Como podemos elegir $\epsilon$ todo lo pequeño que queramos, se deduce que los puntos $z_n$ se acercan arbitrariamente a $z$ cuando sus subíndices crecen. Nótese que el valor de $n_0$ necesario dependerá, en general, del valor de $\epsilon$.
+
+La suseción \ref{44.1} puede tener a lo sumo un límite. Esto es, un límite $z$ es único, si existe. Cuando existe límite, se dice que la sucesión \textit{converge} a $z$, y escribimos
+
+\begin{equation*}
+\lim_{n\to\infty}z_n=z
+\end{equation*}
+
+Si la sucesión no tiene límite, \textit{diverge}.
+
+\begin{teo}\label{teo:44.1}
+Supongamos que $z_n=x_n+iy_n\, (n=1, 2, ...)\quad \textup{y}\quad z = x+iy$. Entonces
+\begin{equation}\label{44.2}
+\lim_{n\to\infty}z_n=z
+\end{equation}
+si y sólo si
+\begin{equation}\label{44.3}
+\lim_{n\to\infty}x_n=x\qquad \textup{y}\qquad \lim_{n\to\infty}y_n=y
+\end{equation}
+\end{teo}
+
+Una \textit{serie} infinita
+
+\begin{equation}\label{44.4}
+\sum_{n=1}^{\infty}z_n=z_1+z_2+\cdots z_N + \cdots
+\end{equation}
+
+de números complejos \textit{converge} con \textit{suma} $S$ si la sucesión
+
+\begin{equation*}
+S_N=\sum_{n=1}^Nz_n=z_1+z_2+\cdots z_N\qquad (N=1, 2, \dots)
+\end{equation*}
+
+de \textit{sumas parciales} converge a $S$; escribimos en tal caso $$\sum_{n=1}^\infty z_n=S$$
+
+\begin{teo}\label{teo:44.2}\label{teo:2}
+Supongamos que $z_n=x_n+iy_n\quad (n=1,2,\dots)\quad \textup{y}\quad S=X+iY$. En tal caso,
+\begin{equation}\label{44.5}
+\sum_{n=1}^\infty z_n=S
+\end{equation}
+si y sólo si
+\begin{equation}\label{44.6}
+\sum_{n=1}^\infty x_n=X\qquad y \qquad \sum_{n=1}^\infty y_n=Y
+\end{equation}
+\end{teo}
+
+Recordando el cálculo que el n-ésimo termino de una serie convergente de números reales tiende a cero cuando $n$ tiende a infinito, vemos inmediatamente de los Teoremas \ref{teo:44.1} y \ref{teo:44.2} que lo mismo es cierto para una serie convergente de número complejos. Esto es, \textit{una condición necesaria para la convergencia de la serie \ref{44.4} es que}
+
+\begin{equation}\label{44.9}
+\lim_{n\to\infty}z_n=0
+\end{equation}
+
+Los términos de una serie convergente de números complejos son, por tanto, acotados. Más precisamente, existe una constante positiva $M$ tal que $|z_n|\leq M$ para cada entero positivo $n$.
+
+Para otra propiedad importante de las series de número complejos, suponemos que la serie \ref{44.4} es \textit{absolutamente convergente}. Es decir, si $z_n=x_n+iy_n$, la serie
+
+\begin{equation*}
+\sum_{n=1}^\infty |z_n|=\sum_{n=1}^\infty\sqrt{x_n^2+y_n^2}
+\end{equation*}
+
+de número reales  $\sqrt{x_n^2+y_n^2}$ converge. Como
+
+\begin{equation*}
+|x_n|\leq\sqrt{x_n^2+y_n^2}\qquad \textup{y}\qquad |y_n|\leq\sqrt{x_n^2+y_n^2}
+\end{equation*}
+
+sabemos por el criterio de comparación real que las dos series $$\sum_{n=1}^\infty |x_n|\qquad \textup{y}\qquad \sum_{n=1}^\infty |y_n|$$ convergen. Además, ya que la convergencia absoluta de una serie de números reales implica la convergencia de la propia serie, se sigue que existen números reales $X$ e $Y$ tales que se verifica (\ref{44.6}). De acuerdo con el Teorema \ref{teo:44.2}, le serie (\ref{44.4}) converge, por tanto. Por consiguiente, \textit{la convergencia absoluta de una serie de números complejos implica la convergencia de esa serie}.
+
+Al establecer el hecho de que la suma de una serie de un número $S$ dado, es conveniente con frecuencia definir el resto $\rho_N$ tras $N$ términos:
+
+\begin{equation}\label{44.10}
+\rho_N=S-S_N
+\end{equation}
+
+Luego, $S=S_N+\rho_N$; y, ya que $|S_n-S|=|\rho_N-0|$, vemos que \textit{una serie converge a un número $S$ si y sólo si la sucesión de restos tiende a cero}. Utilizaremos a menudo esta observación al tratar con \textit{series de potencias}. Son series de la forma
+
+\begin{equation*}
+\sum_{n=0}^\infty a_n(z-z_0)^n=a_0+a_1(z-z_0)+a_2(z-z_0)^2+\cdots +a_n(z-z_0)^n+\cdots
+\end{equation*}
+
+donde $z_0$ y los coeficientes $a_n$ son constantes complejas, y $z$ cualquier punto en una región prefijada que contenga a $z_0$. En tales series, que involucran a una variable $z$, denotaremos las sumas, sumas parciales y restos por $S(z)$, $S_N(z)$, y $\rho_N(z)$ respectivamente.
+
+
+\section{Serie de Taylor}
+Vamos a enunciar el \textit{teorema de Taylor}, uno de los resultados más importante del capítulo
+
+\begin{teo}
+Sea $f$ una función analítica en un disco abierto $|z-z_0|<R_0$, centradi en $z_0$ y de radio $R_0$. Entonces, en todo punto $z$ de este disco, $f(z)$ admite la representación en serie de potencias
+\begin{equation}\label{45.1}
+f(z)=\sum_{n=0}^\infty a_n(z-z_0)^n\qquad (|z-z_0|<R_0)
+\end{equation}
+donde 
+\begin{equation}\label{45.2}
+a_n=\frac{f^{(n)}(z_0)}{n!}\qquad (n=0, 1, 2, \dots)
+\end{equation}
+Esto es, esa serie de potencias converge a $f(z)$ cuando $|z-z_0|<R_0$
+\end{teo}
+
+Este es el desarrollo de $f(z)$ en \textit{serie de Taylor} en torno al punto $z_0$. Es la familiar serie de Taylor del Cálculo, adaptada a funciones de una variable compleja.
+
+Obsérvese además que cuando $f$ es \textit{entera}, el radio $R_0$ del disco puede tomarse arbitrariamente grande. En esas circunstancias, la serie converge a $f(z)$ en todo punto $z$ del plano finito, y la confición de validez se convierte en $|z-z_0|<\infty$. 
+
+De la demostración de este teorema nos encontramos con 
+
+\begin{equation}\label{45.8}
+f(z)=\sum_{n=0}^\infty \frac{f^{(n)}(0)}{n!}z^n\qquad (|z|<R_0)
+\end{equation}
+
+Este caso especial de la serie (\ref{45.1}) en que $z_0=0$ se llama una \textit{serie de Maclaurin}.
+
+Si se sabe que $f$ es analítica en todos los puntos interiores e un círculo cntrado en $z_0$ queda garantizada la convergencia de la serie de Taylor centrada en $z_0$ hacia el valor $f(z)$ en cada uno de esos puntos $z$; no es necesario ningún cirterio de convergencia. En efecto, de acuerdo con el teorema de Taylor, la serie converge a $f(z)$ dentro del círculo centrado en $z_0$ cuyo radio es la distancia de $z_0$ al punto $z_1$ más próximo en el que $f$ deje de ser analítica.
+
+
+
+
+
+\section{Series de Laurent}
+Si una función $f$ no es analítica en un punto $z_0$ no podemos aplicar el teorema de Taylor en ese punto. No obstante, es posible hallar una representación en serie para $f(z)$ que contenga tanto potencias positivas como negativa de $z-z_0$. Ahora presentamos la teoría de tales representaciones, comenzando por el \textit{teorema de Laurent}.
+
+\begin{teo}
+Sea $f$ una función analítica en un dominio anular \\ $R_1<|z-z_0|<R_2$, y sea $C$ cualquier contorno cerrado simple en torno de $z_0$, orientado posotivamente, contenido en ese dominio. Entonces, en todo punto $z$ de ese dominio, $f(z)$ admite la representación en serie
+\begin{equation}\label{47.1}
+f(z)=\sum_{n=0}^\infty a_n(z-z_0)^n+\sum_{n=1}^\infty \frac{b_n}{(z-z_0)^n}\qquad (R_1<|z-z_0|<R_2)
+\end{equation}
+donde
+\begin{equation}\label{47.2}
+a_n=\frac{1}{2\pi i}\int_C\frac{f(z)dz}{(z-z_0)^{n+1}}\qquad (n=0,1,2,\dots)
+\end{equation}
+y
+\begin{equation}\label{47.3}
+b_n=\frac{1}{2\pi i}\int_C\frac{f(z)dz}{(z-z_0)^{-n+1}}\qquad (n=1,2,\dots)
+\end{equation}
+\end{teo}
+
+El desarrollo (\ref{47.1}) se suele escribir
+
+\begin{equation}\label{47.4}
+f(z)=\sum_{n=-\infty}^\infty c_n(z-z_0)^n\qquad (R_1<|z-z_0|<R_2)
+\end{equation}
+donde
+\begin{equation}\label{47.5}
+c_n=\frac{1}{2\pi i}\int_C\frac{f(z)dz}{(z-z_0)^{n+1}}\qquad (n=0,\pm 1, \pm 2, \dots)
+\end{equation}
+
+Cualquiera de las dos formas (\ref{47.1}) o(\ref{47.4}), se llama una \textbf{serie de Laurent}.
+
+Nótese que el integrando en (\ref{47.3}) se puede escribir $f(z)(z-z_0)^{n-1}$. Así pued, es claro que cuando $f$ es analítica en el dico $|z-z_0|<R$, este integrando lo es también. Por tanto, todos los coeficientes $b_n$ son cero, y como
+
+\begin{equation*}
+\frac{1}{2\pi i}\int_C\frac{f(z)dz}{(z-z_0)^{n+1}}=\frac{f^{(n)}(z_0)}{n!}\qquad (n=0,1,2,\dots)
+\end{equation*}
+
+el desarrollo (\ref{47.1}) se reduce a una serie de Taylor centrada en $z_0$.
+
+Sin embargo, si $f$ no es analítica en $z_0$ pero lo es en le resto del disco \\ $|z-z_0|<R_2$, el radio $R_1$ puede tomarse arbitrariamente pequeño. La representación (\ref{47.1}) es válida entonces para $0<|z-z_0|<R_2$. Análogamente, si $f$ es analítica en todo punto del plano finito exterior al círculo $|z-z_0|=R_1$, la condición de validez es $R_1<|z-z_0|<\infty$.
+
+\section{Conergencia absoluta y uniforme de las series de potencias}
+El resto de este capítulo se dedica a diversas propiedades de las series de potencias, o sea, serie del tipo $$\sum_{n=0}^\infty a_n(z-z_0)^n$$
+
+Las presentaremos sólo en el caso especial $z_0=0$. Sus demostraciones en el caso general son escencialmente las mismas y muchos de nuestros resultados se generalizan simplemente sustituyendo $z$ por $z-z_0$. Las generalizaciones que afectana a serie con potencia negativas de $z-z_0$ son asimismo fáciles de obtener.
+
+Recordemos que una serie de número complejos converge \textbf{absolutamente} si la serie de valores absolutos de esos número es convergente. El siguiente teorema se refiere a la convergencia absoluta de las serie de potencias.
+
+\begin{teo}
+Si una serie de potencias
+\begin{equation}\label{49.1}
+\sum_{n=0}^\infty a_nz_1^n
+\end{equation}
+converge cuando $z=z_1\quad (z_1\neq 0)$, entonces es absolutamente convergente en todo punto $z$ del disco abierto $|z|<|z_1|$ 
+\end{teo}
+
+\begin{teo}
+Si $z_1$ es un punto interior al círculo de convergencia $|z|=R$ de una serie de potencias
+\begin{equation}\label{49.4}
+\sum_{n=0}^\infty a_nz^n
+\end{equation}
+entonces esa serie de uniformemente convergente en el disco cerrado $|z|\leq |z_1|$
+\end{teo}
+
+\section{Integración y derivación de serie de potencias}
+Ya hemos visto que una serie de potencias 
+
+\begin{equation}\label{50.1}
+S(z)=\sum_{n=0}^\infty a_nz^n
+\end{equation}
+
+representa una función continua en todo punto interior a su círculo de convergencia. En esta sección se enunciará un teorema que nos dice que la suma $S(z)$ es analítica dentro del cículo.
+
+\begin{teo}\label{teo:50.1}
+Sea $C$ cualquier entorno interior al círculo de convergencia de la serie de potencias (\ref{50.1}), y sea $g(z)$ cualquier función continua sobre $C$. La serie formada multiplicando cada término de la serie de potencias por $g(z)$ puede ser integrada término a término sobre $C$; esto es.
+\begin{equation}\label{50.2}
+\int_Cg(z)S(z)dz=\sum_{n=0}^\infty a_n\int_Cg(z)z^ndz
+\end{equation}
+\end{teo}
+
+Presentamos ahora un resultado el tipo del Teorema \ref{teo:50.1} relativo a la derivación
+
+\begin{teo}
+La serie de potencias (\ref{50.1}) puede ser derivada término a término. Esto es, en todo punto $z$ interior al círculo de convergencia de esa serie
+\begin{equation}\label{50.6}
+S'(z)=\sum_{n=1}^\infty na_n^{n-1}
+\end{equation}
+\end{teo}
+
+\section{Unicidad de las representaciones por series}
+Consideremos en primer lugar la de las serie de Taylor
+
+\begin{teo}
+Si una serie
+\begin{equation}\label{51.1}
+\sum_{n=0}^\infty a_n(z-z_0)^n
+\end{equation}
+converge a $f(z)$ en todo punto interior a algún círculo $z-z_0=R$, entonces es la serie de Taylor de $f$ en potencias de $z-z_0$.
+\end{teo}
+
+Nuestro segundo teorema se refiere a la unciidad de la representación en serie de Laurent
+
+\begin{teo}
+Si una serie
+\begin{equation}\label{51.3}
+\sum_{-\infty}^\infty c_n(z-z_0)^n=\sum_{n=0}^\infty a_n(z-z_0)^n + \sum_{n=1}^\infty \frac{b_n}{(z-z_0)^n}
+\end{equation}
+converge a $f(z)$ en todos los puntos de algún dominio anular centrado en $z_0$, entonces es la serie de Laurent para $f$ en potencias de $z-z_0$ en ese dominio.
+\end{teo}
+
+\section{Multiplicación y división de serie de potencias}
+Supongamos que cada una de las series de potencias
+
+\begin{equation}\label{52.1}
+\sum_{n=0}^\infty a_nz^n\qquad \textup{y}\qquad \sum_{n=0}^\infty b_nz^n
+\end{equation}
+
+converge dentro de un círculo $|z|=R$. Las sumas $f(z)$ y $g(z)$ son funciones analíticas en el disco $|z|<R$, y el producto de esas sumas tiene un desarrollo en serie de Maclaurin válido allí:
+
+\begin{equation}\label{52.2}
+f(z)g(z)=\sum_{n=0}^\infty c_nz^n\qquad (|z|<R)
+\end{equation}
+
+Como las serie (\ref{52.1}) son las serie de Maclaurin de $f$ y $g$, los tres primeros coeficientes del desarrollo (\ref{52.2}) vienen dados por
+
+\begin{equation*}
+c_0=f(0)g(0)=a_0b_0
+\end{equation*}
+\begin{equation*}
+c_1=\frac{f(0)g'(0)+f'(0)g(0)}{1!}=a_0b_1+a_1b_0
+\end{equation*}
+y
+\begin{equation*}
+c_2=\frac{f(0)g''(0)+2f'(0)g'(0)+f''(0)g(0)}{2!}=a_0b_2+a_1b_1+a_2b_0
+\end{equation*}
+
+La expresión general de $c_n$ es, entonces
+
+\begin{equation}\label{52.3}
+[f(z)g(z)]^{(n)}=\sum_{k=0}^n{n\choose k}f^{(k)}(z)g^{(n-k)}(z)
+\end{equation}
+
+donde
+
+\begin{equation*}
+{n\choose k}=\frac{n!}{k!(n-k)!}
+\qquad (k=0,1,2,\dots ,n)
+\end{equation*}
+
+para la derivada $n$-ésima del producto de dos funciones. Como es habitual, $f^{(0)}(z)$ y $0!=1$. Evidentemente
+
+\begin{equation*}
+c_n=\sum_{k=0}^n\frac{f^{(k)}(0)}{k!}\frac{g^{(n-k)}(0)}{(n-k)!}=\sum_{k=0}^na_kb_{n-k}
+\end{equation*}
+
+y así se puede escribir (\ref{52.2}) en la forma
+
+\begin{equation}\label{52.4}
+f(z)g(z)=a_0b_0+(a_0b_1+a_1b_0)z+(a_0b_2+a_1b_1+a_2b_0)z^2+\cdots + \left(\sum_{k=0}^na_kb_{n-k}\right)z^n+\cdots \qquad (|z|<R)
+\end{equation}
+
+La serie (\ref{52.4}) es la misma que se obtiene multiplicando formalmente las dos series (\ref{52.1}) término a término y reuniendo los términos resultantes por potencias de $z$; esto se conoce como el \textbf{producto de Cauchy} de las dos series dadas.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

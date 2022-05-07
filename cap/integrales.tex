@@ -1,0 +1,325 @@
+\chapter{Integrales}
+\section{Funciones complejas $w(t)$}
+Consideremos primero derivadas e integrales de funciones complejas $w(t)$ de una variable real $t$.
+
+Escribimos 
+
+\begin{equation}\label{30.1}
+w(t)=u(t)+iv(t)
+\end{equation}
+
+donde las funciones $u$ y $v$ son funciones \textit{reales} de $t$.
+
+La derivada $w'(t)$, de la función (\ref{30.1}) en un punto $t$ se define como
+
+\begin{equation}\label{30.2}
+w'(t)=u'(t)+iv'(t)
+\end{equation}
+
+supuesto que existe cada una de las derivadas $u'$ y $v'$ en $t$.
+
+De la definición (\ref{30.2}) se sique que, para cada constante compleja $z_0=x_0+iy_0$,
+
+\begin{equation}\label{30.3}
+\frac{d}{dt}[z_0w(t)]=z_0w'(t)
+\end{equation}
+
+Otras reglas apendidas en el Cálculo, tales como las de derivación de sumas y productos, se aplican igual para funciones reales de $t$. Otra fórmula de derivación esperada es
+
+\begin{equation}\label{30.4}
+\frac{d}{dt}e^{z_0t}=z_0e^{z_0t}
+\end{equation}
+
+Las integrales definidas de funciones del tipo (\ref{30.1}) sobre intervalos $a\leq t\leq b$ se definen como
+
+\begin{equation}\label{30.5}
+\int_a^bw(t)dt=\int_a^bu(t)dt+i\int_a^bv(t)dt
+\end{equation}
+
+cuando las integrales individuales de la derecha existen. Así pues,
+
+\begin{equation}\label{30.6}
+Re\int_a^bw(t)dt=\int_a^bRe[w(t)]dt\quad \textup{y}\quad Im\int_a^bw(t)dt=\int_a^b
+Im[w(t)]dt
+\end{equation}
+
+De forma similar se definen las integrales impropias de $w(t)$ sobre intervalos no acotados.
+
+La existencia de las integrales de $u$ y de $v$ en la definición (\ref{30.5}) queda garantizada si esas funciones son \textit{continuas a trozos} en el intervalo $a\leq t\leq b$. Es decir, si son continuas en todos los puntos de ese intervalo, excepto quizás en un número finito de puntos en los que , si bien discontinua, la función en cuestión posee límites laterales.
+
+Las reglas esperadas para integrar el producto de una función $w(t)$ por un número complejo, o sumas de funciones, y para intercambiar límites de integración, son todas válidas. Estas reglas, así como la propiedad $$\int_a^bw(t)dt=\int_a^c(t)dt+\int_c^bw(t)dt$$ son fáciles de verificas sin más que recordas las correspondientes del Cálculo.
+
+El teorema fundamental del Cálculo sobre primitivas puede extendrrse a las integrales del tipo (\ref{30.5}). Concretamente, supongamos que las fucniones 
+
+\begin{equation*}
+w(t)=u(t)+iv(t)\quad \textup{y}\quad W(t)=U(t)+iV(t)
+\end{equation*}
+
+son continuas en el intervalo $[a,b]$. Si $W'(t)=w(t)$ para $a\leq t \leq b$, entonces $U'(t)=u(t)$ y $V'(t)=v(t)$. Por tanto, en vista de la  definición (\ref{30.5}),
+
+\begin{equation}\label{30.7}
+\int_a^bw(t)\,dt=\left. W(t)\right]_a^b=W(b)-W(a)
+\end{equation}
+
+Para establecer una propiedad básica de los valores absolutos de las integrales, tomaremos $a<b$ y supondremos que el valor de la integral definida en (\ref{30.5}) en un número complejo no nulo. Si $r_0$ es el módulo y $\theta_0$ un argumento de ese valor, entonces $$\int_a^bw\, dt=r_0e^{i\theta_0}$$
+
+Despejando $r_0$, se tiene
+
+\begin{equation}\label{30.8}
+r_0=\int_a^be^{-i\theta_0}w\, dt
+\end{equation}
+
+Como el lado izquerdo de esa igualdad es un número real, el derecho ha de ser también real. Luego, usando el hecho de que la parte real de un número real es el propio número, vemos que el miembro de la derecha en (\ref{30.8}) puede reescribirse así:
+
+\begin{equation*}
+\int_a^be^{-i\theta_0}w\, dt = Re\int_a^be^{-i\theta_0}w\, dt = \int_a^bRe(e^{-i\theta_0}w)dt
+\end{equation*}
+
+con ello (\ref{30.8}) toma la forma
+
+\begin{equation}\label{30.9}
+r_0=\int_a^bRe(e^{-i\theta_0}w)dt
+\end{equation}
+Ahora bien, 
+ 
+\begin{equation*}
+Re(e^{-i\theta_0}w)\leq |e^{-i\theta_0}w|=|e^{-i\theta_0}||w|=|w|
+\end{equation*}
+ 
+ y, en consecuencia, por (\ref{30.9}) $$r_0\leq \int_a^b|w|dt$$
+ 
+Por tanto,
+
+\begin{equation}\label{30.10}
+\left|\int_a^bw(t)dt\right|\leq \int_a^b|w(t)|dt\qquad (a<b)
+\end{equation}
+
+Esta propiedad es claramente válida incluso cuando el valor de la integral es cero, en particulas cuando $a=b$.
+
+Con ligeras modificaciones, la discusión precedente conduce a desigualdades como
+
+\begin{equation}\label{30.11}
+\left|\int_a^\infty w(t)dt\right|\leq \int_a^\infty|w(t)|dt
+\end{equation}
+
+supuesto que existan ambas integrales impropias.
+
+\section{Contornos}
+Se definen integrales de funciones complejas de una variable \textit{compleja} sobre curvas del plano complejo, en lugar de sobre intervalos de la recta real.
+
+Un conjunto de puntos $z=(x,y)$ en el plano se dice que constituyen un arco si 
+
+\begin{equation}\label{31.1}
+x=x(t),\quad y=y(t)\qquad (a\leq t \leq b)
+\end{equation}
+
+donde $x(t)$ e $y(t)$ son funciones contícuas del parámetro $t$. Esta definición establece una aplicación continua del intrvalo $a\leq t\leq b$ en el plano $y$, o plano $z$; y los puntos imagen se ordenan por valores crecientes de $t$. Es conveniente describir los puntos de $C$ por medio de la ecuación 
+
+\begin{equation}\label{31.2}
+z=z(t)\qquad (a\leq t\leq b)
+\end{equation}
+
+donde 
+
+\begin{equation}\label{31.3}
+z(t)=x(t)+iy(t)
+\end{equation}
+
+El arco $C$ es un arco \textit{simple}, o arco de Jordan, si no se corta a sí mismo; esto es, $C$ es simple si $z(t_1)\neq z(t_2)$ cuando $t_1\neq t_2$. Cuando el arco $C$ se simple excepto por el hecho de que $z(b)=z(a)$, decimo que $C$ es una \textit{curva cerrada simple}, o curva de Jordan.
+
+Un \textit{contorno}, o arco suave a trozos, es un arco que consiste en un nñumero finito de arcos suaves unidos por sus extremos. Cuando sólo coinciden los valores inicial y final de $z(t)$, un contorno $C$ se llama un \textit{conjunto cerrado simple}.
+
+Los puntos de cualquier curva cerrada simple o contorno cerrado simple $C$ son forntera de dos dominios distintos, uno de los cuelaes es el interior de $C$ y es acotado. El otro, que es el exterior de $C$, es no acotado. Es conveniente aceptar esta afirmación, conocida como el \textit{teorema de la curva de Jordan}, como geométeicamente evidente (su demostración no es sencilla).
+
+\section{Integrales de contorno}
+Veamos ahora con las integrales de funciones complejas $f$ de la variable compleja $z$. Tales integrales se definen en términos de los valores $f(z)$ a lo largo de un contorno dado $C$, que va desde un punto $z=Z_1$ a un punto $z=z_2$ del plano complejo. Son, por tanto, integrales de línea, ys sus valores dependen, en general, del contorno $C$ así como de la función $f$. Se escribe $$\int_Cf(z)dz \quad \textup{o}\quad \int_{z_1}^{z_2}f(z)dx$$
+
+Supongamos que la ecuación 
+
+\begin{equation}\label{32.1}
+z=z(t)\qquad (a\leq t\leq b)
+\end{equation}
+
+representa un contorno $C$, que se extiende desde $z_1=z(a)$ hasta $z_2=z(b)$. Sea $f(z)$ continua a trozos sobre $C$, es decir, $f[z(t)]$ es continua a trozos en el intervalo $a\leq t\leq b$. Definimos la integral de línea, o \textit{integral de contorno}, de $f$ a lo largo de $C$ como sigue:
+
+\begin{equation}\label{32.2}
+\int_Cf(z)dz=\int_a^bf[z(t)]z'(t)dt
+\end{equation}
+
+Asociado con el contorno $C$ usado en la integral (\ref{32.2}) está el contorno $-C$, con el mismo conjunto de ountos, pero recorrido en sentido contrario al de $C$, de manera que el nuevo contorno se extiende desde el punto $z_2$ al $z_1$. Haciendo los respectivos cálculos se encuentra que
+
+\begin{equation}\label{32.3}
+\int_{-C}f(z)dz=-\int_Cf(z)dz
+\end{equation}
+
+Supongamos que $C$ consta de un contorno $C_1$ desde $z_1$ hasta $z_3$, seguido de un contorno $C_2$ desde $z_3$ hasta $z_2$, siendo el punto inicial de $C_2$ el punto final de $C_1$. Es evidente que 
+
+\begin{equation}\label{32.4}
+\int_Cf(z)dz=\int_{C_1}f(z)dz+\int_{C_2}f(z)dz
+\end{equation}
+
+Otras propiedades de las integrales de contorno se desprenden inmediatamente de (\ref{32.2}) y de propiedades de las integrales de funciones complejas $w(t)$. A saber,
+
+\begin{equation}\label{32.5}
+\int_Cz_0f(z)dz=z_0\int_Cf(z)dz
+\end{equation}
+
+para toda contante compleja $z_0$, y
+
+\begin{equation}\label{32.6}
+\int_C[f(z)+g(z)]dz=\int_Cf(z)dz+\int_Cg(z)dz
+\end{equation}
+
+Finalmente, según (\ref{32.2}) y (\ref{30.10})
+
+\begin{equation*}
+\left|\int_Cf(z)dz\right|\leq \int_a^b|f[z(t)]z'(t)|dt
+\end{equation*}
+
+Así para cualquier constante no negativa $M$ tal que los valores de $f$ sobre $C$ satisfagan $|f(z)|\leq M$
+
+\begin{equation*}
+\left|\int_Cf(z)dz\right|\leq M\int_a^b|z'(t)|dt
+\end{equation*}
+
+Dado que la integral de la derecha representa la longitus $L$ del contorno, se deduce que el módulo del valor de la integrla de $f$ a los largo de $C$ no supera $ML$:
+
+\begin{equation}\label{32.7}
+\left|\int_Cf(z)dz\right|\leq ML
+\end{equation}
+
+Es desigualdad estricta, cuando los valores de $f$ sobre $C$ son tales que $|f(z)|\leq M$.
+
+Excepto en casos especiales, no se dispone de una interpretación correspondiente, física o geométrica, de las integrales en el plano complejo. Sin embargo, es ectraordinariamente útil tanto en las matemáticas puras como en las aplicadas.
+
+\section{Primitivas}\label{sec:34}
+\begin{teo}
+Sea $f(z)$ una función continua en un dominio $D$. Si cualquiera de estas afirmaciones es verdadera, lo son también las demás:
+\begin{itemize}
+\item $f$ tiene una primitiva $F$ en $D$
+\item las integrales de $f$ a lo largo de contornos contendios en $D$ que unen dos puntos fijos $z_1$ y $z_2$ tienen el mismo valor
+\item las integrales de $f$ a los larfo de cualquier contorno cerrado contenido en $D$ tienen todas el mismo valor
+\end{itemize}
+\end{teo}
+
+Nótese que el teorema no afirma que alguna de esas propiedaees sea válida para una $f$ dada en un cierto dominio $D$. Lo que afirma es que la tres son simultáneamente válidas o falsas.
+
+\section{El teorema de Cauchy-Goursat}
+En la sección \ref{sec:34} vimos que si una función continua admite primitiva en un dominio $D$, la integral de $f(z)$ a lo largo de cualquier contorno cerrado $C$ contenido por completo en $D$ tiene valor cero. En esta sección presentamos un teorema que da otras condiciones sobre $f$ que garantizan el valor de la integrla de $f(z)$ a lo largo de un contorno cerrado \textit{simple} es cero. 
+
+\begin{teo}
+Si una función $f$ es analítica en todos los puntos interiores a un conotrno cerrado simple y sobre los puntos de $C$, entonces $$\int_Cf(z)dz=0$$
+\end{teo}
+
+\section{Dominios simplemente conexos y multiplemente conexos}
+Un dominio \textit{simplemente conexo} $D$ es un dominio tal que todo contorno cerrado simple dentro de él encierra sólo puntos d e$D$. El conjunto de puntos interior a un contorno cerrado simple es un ejemplo. El dominio anular entre dos círculos concéntricos no es, por el contrario, simplemente conexo. Un dominjo que no es simplemente conexo se llamará \textit{multiplemente conexo}.
+
+\begin{teo}
+Si una función $f$ es analítica es un dominio simpelmente conexo $D$, entonces
+\begin{equation}\label{38.1}
+\int_Cf(z)dz=0
+\end{equation}
+para todo contorno cerrado $C$ contenido en $D$.
+\end{teo}
+
+\begin{coro}
+Una función es analítica sobre un dominio simplemente conexo $D$ tiene primitiva en $D$.
+\end{coro}
+
+El teorema de Cauchy-Goursat se puede extender de modo que admita integrales a lo largo del controno de un dominio múltiplemente conexo.
+
+\begin{teo}\label{teo:38.2}
+Supongamos que
+\begin{enumerate}
+\item $C$ es un contorno cerrado simple, con orientación positiva;
+\item $C_k\, (k=1, 2, \dots n)$ denota un número finito de contornos cerrados simples, orientados positivamente, interiores a $C$ y cuyos interiores no tienen puntos en común
+\end{enumerate}
+Si una función $f$ es analítica en la región cerrada formada por los puntos interiores a $C$ o del propio $C$, excepto los puntos interiores a cada $C_k$, entonces
+\begin{equation}\label{38.2}
+\int_Cf(z)dz+\sum_{k=1}^n\int_{C_k}f(z)dz=0
+\end{equation}
+\end{teo}
+
+El siguiente corolario es una consecuencia particularmente importantes del \ref{teo:38.2}
+\begin{coro}\label{coro:38.2}
+Sean $C_1$ y $C_2$ contornos cerrados simples positivamente oriantados, donde $C_2$ es interior a $C_1$. Si una función $f$ es analítica en la región cerrada que forman esos contornos y los puntos situados entre ellos, entonces
+\begin{equation}\label{38.4}
+\int_{C_1}f(z)dz=\int_{C_2}f(z)dz
+\end{equation}
+\end{coro}
+
+El Corolario \ref{coro:38.2} se conoce como el \textit{principio de deformación de caminos}, ya que nos dice que si $C_1$ se deforma continuamente en $C_2$ pasando siempre por puntos en los que $f$ es analítica, el valor de la integral de $f$ sobre $C_1$ no cambia.
+
+\section{La fórmula integral de Cauchy}
+\begin{teo}
+Sea $f$ analítica en el interior y en los puntos de un contorno cerrado simple $C$, orientado positivamente. Si $z_0$ es un punto interior a $C$, entonces
+\begin{equation}\label{39.1}
+f(z_0)=\frac{1}{2\pi i}\int_C\frac{f(z)dz}{z-z_0}
+\end{equation}
+\end{teo}
+
+\ref{39.1} se llama la \textit{fórmula integral de Cauchy.} Afirma que si una función $f$ ha de ser analítica en el interior de y sobre los puntos de un contorno cerrado simple $C$, los valores de $f$ interiores a $C$ están completamente determinados por los valores de $f$ sobre $C$.
+
+Cuando se expresa la fórmula integral de Cauchy como
+\begin{equation}\label{39.2}
+\int_C\frac{f(z)dz}{z-z_0}=2\pi if(z_0)
+\end{equation}
+cabe utilizarla para calcular ciertas integrales a los largo de contornos cerrados simples.
+
+\section{Derivadas de las funciones analíticas}
+\begin{teo}
+Si una función $f$ es analítica en un punto, sus derivadas de todos los órdenes son también funciones analíticas en ese punto.
+\end{teo}
+
+\begin{coro}
+Si una función $f(z)=u(x,y)+iv(x,y)$ es analítica en un punto $z=x+iy$, sus funciones componentes $u$ y $v$ tienen derivadas parciales continuas de todo orden en ese punto.
+\end{coro}
+
+Si convenimos en denotar $f(z)$ por $f^{(0)}(z)$, y en $0!=1$, por inducción matemática se puede verificar esta notable fórmula:
+
+\begin{equation}\label{40.4}
+f^{(n)}(z)=\frac{n!}{2\pi i}\int_C\frac{f(s)ds}{(s-z)^{n+1}}\qquad (n=0, 1, 2, \dots )
+\end{equation}
+
+Cuando $n=0$, no es sino la fórmula integral de Cauchy.
+
+\section{El teorema de Morera}
+\begin{teo}
+Si una función $f$ es continua en un dominio $D$ y si
+\begin{equation}\label{41.1}
+\int_Cf(z)dz=0
+\end{equation}
+para todo contorno cerrado $C$ contenido en $D$, entonces $f$ es analítica en $D$.
+\end{teo}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
